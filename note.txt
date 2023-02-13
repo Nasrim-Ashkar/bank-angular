@@ -24,5 +24,40 @@ ts-->view
 
    1.2.1  event binding----- (event)="method()"
    1.2.2  event binding using $event  (event)=method($event)
+   1.2.3 event binding with template redering variable----#var
 
+2.Two Way binding
+---------------------
+
+  2.1 ngModel-----[(ngModel)]="property"-----using module----->FormsModule(its a library)
      
+
+redirection in angular
+module---AppRoutingModule
+-----router-->class
+methods-navigateByUrl
+
+dependacncy injection 
+
+---to share data  from one class to another
+
+access_specifier  reference:Classname
+
+private/public
+
+
+
+Angular Service
+-------------------------
+
+to store datas and methods
+-all the components can access the dataa and method defined in services file easily
+
+     ----------ng g s service_name
+
+
+
+Angular Directives   -to manipulate  DOM
+
+1.component Directives
+2.structural Directives    *ngFor

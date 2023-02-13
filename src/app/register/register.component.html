@@ -1,0 +1,42 @@
+
+<div class="container text-center  rounded p-2 mt-5" style="background-color: rgba(78, 119, 158, 0.559);">
+    <h1 class="text-center mt-5">Bank Registration</h1>
+    <form action=""> 
+      <div class="p-3 mt-4">
+        <input
+          type="text"
+          [(ngModel)]="usname" 
+          class="form-control"
+          id="uname"
+          name="usern1"
+          placeholder="Enter your name"
+        />
+      </div>
+      <div class="p-3 mt-4 ">
+        <input
+          type="text"
+          [(ngModel)]="accid" 
+          class="form-control"
+          id="acid"
+          name="acnum1"
+          placeholder="Enter your Account Number"
+        />
+      </div>
+      <div class="p-3 mt-4 ">
+        <input
+          type="password"
+          [(ngModel)]="pswd" 
+          class="form-control"
+          id="psw1"
+          name="paswrd1"
+          placeholder="Enter your Password"
+        />
+      </div>
+      <div class="p-3 mt-4">
+        <button (click)="register()" type="button" class="btn btn-outline-light">Register</button>
+      </div>
+
+        
+</form>
+</div>
+

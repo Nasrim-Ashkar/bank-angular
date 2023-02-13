@@ -31,19 +31,22 @@
 </div>
     
 
-<div class="container  rounded border  text-center p-5 mt-5" style="background-color: rgba(89, 88, 97, 0.374);">
+<div class="container  rounded border  text-center p-5 mt-5" style="background-color:  rgba(78, 119, 158, 0.559);">
     <h1 style="color: aliceblue;">Sign in To Your Account</h1>
     
-    <form action="">
+    <form action="" (ngSubmit)="login()" >
         <div class="p-3 mt-2">
-            <input (change)="acnoChange($event)" class="form-control" name="acnum1" id="acid" type="text" [placeholder]="inputplaceholder">
+            <input [(ngModel)]="acno" class="form-control" name="acnum1" id="acid" type="text" [placeholder]="inputplaceholder">
         </div>
         <div class="p-3 mt-2">
-            <input (change)="pswrdChange($event)" class="form-control" name="paswrd1" id="psw1" type="password" placeholder="Enter Password">
+            <input [(ngModel)]="psw" class="form-control" name="paswrd1" id="psw1" type="password" placeholder="Enter Password">
         </div>
         <div class="p-3 mt-2">
-            <button type="button" (click)="login()" class="btn btn-outline-light" >Log In</button>
+            <button type="submit"  class="btn btn-outline-light" >Log In</button>
         </div>
+        <div class="text-center text-white">
+           <strong>Not registered? </strong><a style="text-decoration: none; color: rgb(16, 203, 103);" routerLink="register">
+            <strong>register</strong></a></div>
     </form >
     
 </div>
