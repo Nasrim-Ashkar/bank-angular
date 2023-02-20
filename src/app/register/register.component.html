@@ -1,36 +1,47 @@
 
 <div class="container text-center  rounded p-2 mt-5" style="background-color: rgba(78, 119, 158, 0.559);">
     <h1 class="text-center mt-5">Bank Registration</h1>
-    <form action=""> 
+    <form [formGroup]="registerForm" action=""> 
       <div class="p-3 mt-4">
         <input
+          formControlName="usname"
           type="text"
-          [(ngModel)]="usname" 
           class="form-control"
           id="uname"
           name="usern1"
           placeholder="Enter your name"
         />
       </div>
+      <div *ngIf="this.registerForm.get('usname')?.errors  && this.registerForm.get('usname')?.touched">
+        <p class="text-left"><strong>Invalid Username</strong></p>
+      </div>
       <div class="p-3 mt-4 ">
         <input
           type="text"
-          [(ngModel)]="accid" 
+          formControlName="accid"
+
           class="form-control"
           id="acid"
           name="acnum1"
           placeholder="Enter your Account Number"
         />
       </div>
+      <div *ngIf="this.registerForm.get('accid')?.errors  && this.registerForm.get('accid')?.touched">
+        <p class="text-left"><strong>Invalid Account Number</strong></p>
+      </div>
       <div class="p-3 mt-4 ">
         <input
           type="password"
-          [(ngModel)]="pswd" 
+          formControlName="psw"
+
           class="form-control"
           id="psw1"
           name="paswrd1"
           placeholder="Enter your Password"
         />
+      </div>
+      <div *ngIf="this.registerForm.get('psw')?.errors  && this.registerForm.get('psw')?.touched">
+        <p class="text-left"><strong>Invalid Password</strong></p>
       </div>
       <div class="p-3 mt-4">
         <button (click)="register()" type="button" class="btn btn-outline-light">Register</button>

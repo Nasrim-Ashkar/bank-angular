@@ -60,4 +60,60 @@ to store datas and methods
 Angular Directives   -to manipulate  DOM
 
 1.component Directives
-2.structural Directives    *ngFor
+2.structural Directives    *ngFor  *ngIf 
+3.Attribute Directives  [ngClass]----some condition class want
+
+
+
+Validation in Angular
+----------------------------
+
+form creation in angular
+
+  1.template driven form
+    -----html form creation then add extra validation ---difficult method
+  2.Model driven form(Reactive form)
+    -------easy method
+    -------validation is easy
+    -------
+
+           2.1 Reactive form   -used to create model of form
+             contain----->group,array,control
+               
+               -reactiveFormsModule   -module
+               -FormBuilder           -class used to create model form
+               -group()               -method to create model
+
+
+Parent Child components Communication
+---------------------------------------------
+
+@Input()   -------------parent to child data sharing
+@Output()---------------child to parent data sharing
+
+Event creation in Angular
+---------------------------
+
+we can create our own events in angular PROJECTS
+
+EventEmitter----------class used to create userdefined events
+
+             eventName=new EventEmitter()  ///initialising
+
+             emit()---to define the working time/to start even 
+
+Date and time in Angular
+---------------------------
+
+class -Date
+
+
+change default value to user defined--angular pipe
+
+Angular Pipes
+--------------
+
+to convert datas into another formate
+
+to  chnge the date format ---we used---date pipe
+

@@ -1,21 +1,50 @@
-<h1>Welcome {{user}}</h1>
-<div class="container mt-3 p-2 w-25 text-center border-dark rounded-pill" style="background-color: rgba(0, 0, 0, 0.181);">
-    <a style="text-decoration: none; color: rgb(228, 221, 212);" routerLink="/transaction">View Transaction History</a>
+<h1 class="p-4">Welcome {{user}}</h1>
+<div class="text-center text-white">
+  <h4>{{datedetails | date : 'medium'}}</h4>
 </div>
-<div class="container row mb-5 p-5 " style="margin: auto;">
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class=" p-4" style="background-color: rgba(78, 119, 158, 0.559)">
+        <div class="container mt-3 p-2 w-25 text-center border-dark rounded-pill" style="background-color: rgba(0, 0, 0, 0.359);">
+            <a style="text-decoration: none; color: rgb(228, 221, 212);" routerLink="/transaction">View Transaction History</a>
+        </div>
+        <div class="container mt-3 p-2 w-25 text-center border-dark rounded-pill" style="background-color: rgba(0, 0, 0, 0.349);">
+          <button (click)="deleteParent()" type="button" class="btn text-white" >Delete Account</button>
+
+        </div>
+        <div class="container mt-3 p-2 w-25 text-center border-dark rounded-pill" style="background-color: rgba(0, 0, 0, 0.349);">
+          <button (click)="logout()" type="button" class="btn text-white" >Log out</button>
+      </div>
+        <!-- <div class="container mt-3 p-2 w-25 text-center border-dark rounded-pill" style="background-color: rgba(0, 0, 0, 0.378);">
+            <a style="text-decoration: none; color: rgb(228, 221, 212);" routerLink="/" >Log Out</a>
+        </div> -->
+       
+      
+    </div>
+  </div>
+  <nav class="navbar navbar-dark ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <app-deleteconfirm (oncancel)="cancel()"  [item]="acno"></app-deleteconfirm>
+
+
+<div [ngClass]="acno?'style':''" class="container row mb-5 p-5 " style="margin: auto;">
     <div class="text-center container col-6 ml-2">
         <div class="container w-75 rounded border  text-center p-5 mt-2 ml-2 " style="background-color:  rgba(78, 119, 158, 0.559);">
           <h1 class="text-white" style="color: aliceblue;">Deposit</h1>
           
-          <form action=""  >
+          <form action="" [formGroup]="depositeForm"  >
               <div class="p-3 mt-2">
-                  <input [(ngModel)]="acno" class="form-control" name="acnum1" id="acid" type="text" placeholder="Enter Account Number">
+                  <input formControlName="acno" class="form-control" name="acnum1" id="acid" type="text" placeholder="Enter Account Number">
               </div>
               <div class="p-3 mt-2">
-                  <input class="form-control" [(ngModel)]="psw" name="paswrd1" id="psw1" type="password" placeholder="Enter Password">
+                  <input class="form-control" formControlName="psw" name="paswrd1" id="psw1" type="password" placeholder="Enter Password">
               </div>
               <div class="p-3 mt-2">
-                <input class="form-control" [(ngModel)]="amnt" name="paswrd1" id="amouid" type="text" placeholder="Enter Your Amount">
+                <input class="form-control" formControlName="amnt" name="paswrd1" id="amouid" type="text" placeholder="Enter Your Amount">
               </div>
               <div class="p-3 mt-2">
                   <button type="submit" (click)="deposit()" class="btn btn-outline-light" >Deposit</button>
@@ -28,18 +57,18 @@
     </div> 
     <div class="container text-center col-6">
 
-        <div class="container w-75  rounded border  text-center p-5 mt-2"  style="background-color:  rgba(78, 119, 158, 0.559);">
+        <div  class="container w-75  rounded border  text-center p-5 mt-2"  style="background-color:  rgba(78, 119, 158, 0.559);">
           <h1 style="color: aliceblue;">Withdraw</h1>
           
-          <form action=""  >
+          <form action="" [formGroup]="withdrawForm">
               <div class="p-3 mt-2">
-                  <input  [(ngModel)]="acno1" class="form-control" name="acnum1" id="acid2" type="text" placeholder="Enter Account Number">
+                  <input  formControlName="acno1" class="form-control" name="acnum1" id="acid2" type="text" placeholder="Enter Account Number">
               </div>
               <div class="p-3 mt-2">
-                  <input [(ngModel)]="psw1" class="form-control" name="paswrd1" id="psw2" type="password" placeholder="Enter Password">
+                  <input formControlName="psw1" class="form-control" name="paswrd1" id="psw2" type="password" placeholder="Enter Password">
               </div>
               <div class="p-3 mt-2">
-                <input [(ngModel)]="amnt1" class="form-control" name="paswrd1" id="amouid1" type="text" placeholder="Enter Your Amount">
+                <input formControlName="amnt1" class="form-control" name="paswrd1" id="amouid1" type="text" placeholder="Enter Your Amount">
               </div>
               <div class="p-3 mt-2">
                   <button type="submit" (click)="withdraw()" class="btn btn-outline-light" >Withdraw</button>

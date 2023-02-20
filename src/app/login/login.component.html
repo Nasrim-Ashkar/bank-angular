@@ -1,32 +1,26 @@
 <h2>{{data}}</h2>
 <div class="container1  rounded border  text-center p-3 mt-5" style="background-color: rgba(89, 88, 97, 0.374);">
-    <!-- <h1 style="color: aliceblue;">What's New!!!</h1> -->
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://www.freeiconspng.com/thumbs/bank-icon/bank-icon-23.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/12/18132011/ebnkg2-1024x1024.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://highland.bank/wp-content/uploads/hbenews_main_image_12_16.png" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="http://img.picturequotes.com/2/196/195401/money-looks-better-in-the-bank-than-on-your-feet-quote-1.jpg" class="d-block w-100" alt="...">
       </div>
+      <div class="carousel-item">
+        <img src="http://img.picturequotes.com/2/857/856173/no-man-can-add-one-dollar-to-his-bank-account-by-worrying-quote-1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://img.picturequotes.com/2/768/767409/bank-account-statement-just-look-like-im-ready-for-early-retirement-quote-1.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
     
 </div>
     
@@ -34,12 +28,14 @@
 <div class="container  rounded border  text-center p-5 mt-5" style="background-color:  rgba(78, 119, 158, 0.559);">
     <h1 style="color: aliceblue;">Sign in To Your Account</h1>
     
-    <form action="" (ngSubmit)="login()" >
+    <form action="" [formGroup]="loginForm" (ngSubmit)="login()" >
         <div class="p-3 mt-2">
-            <input [(ngModel)]="acno" class="form-control" name="acnum1" id="acid" type="text" [placeholder]="inputplaceholder">
+            <input           formControlName="acno"
+            class="form-control" name="acnum1" id="acid" type="text" [placeholder]="inputplaceholder">
         </div>
         <div class="p-3 mt-2">
-            <input [(ngModel)]="psw" class="form-control" name="paswrd1" id="psw1" type="password" placeholder="Enter Password">
+            <input           formControlName="psw"
+            class="form-control" name="paswrd1" id="psw1" type="password" placeholder="Enter Password">
         </div>
         <div class="p-3 mt-2">
             <button type="submit"  class="btn btn-outline-light" >Log In</button>
